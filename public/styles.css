@@ -1,0 +1,132 @@
+/* Designer: Hello World Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem;
+  text-align: center;
+}
+
+.header .emoji {
+  font-size: 4rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.message {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  color: #555;
+  min-height: 3rem;
+}
+
+/* Loading state */
+.message.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 3px solid #667eea;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+/* Error state */
+.message.error {
+  color: #e74c3c;
+}
+
+.message.error::before {
+  content: '⚠️ ';
+}
+
+/* Success state */
+.message.success {
+  color: #27ae60;
+}
+
+.message.success::before {
+  content: '✅ ';
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header {
+    padding: 2rem;
+  }
+  
+  .header .emoji {
+    font-size: 3rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+  
+  .message {
+    font-size: 1.2rem;
+  }
+}
