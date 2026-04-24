@@ -28,12 +28,12 @@ describe('GET /api/hello', () => {
    * Q1: Test response body contains correct message
    * Test ID: API-002
    */
-  test('should return JSON with "message" field containing "Hello World"', async () => {
+  test('should return JSON with "message" field containing "Hello World, World!"', async () => {
     const response = await request(app)
       .get('/api/hello');
     
     expect(response.body).toHaveProperty('message');
-    expect(response.body.message).toBe('Hello World');
+    expect(response.body.message).toBe('Hello, World!');
   });
 
   /**
@@ -56,7 +56,7 @@ describe('GET /api/hello', () => {
       .get('/api/hello');
     
     expect(Object.keys(response.body).length).toBe(1);
-    expect(response.body).toEqual({ message: 'Hello World' });
+    expect(response.body).toEqual({ message: 'Hello, World!' });
   });
 
   /**
@@ -111,7 +111,7 @@ describe('GET /api/hello', () => {
     
     responses.forEach(response => {
       expect(response.status).toBe(200);
-      expect(response.body.message).toBe('Hello World');
+      expect(response.body.message).toBe('Hello, World!');
     });
   });
 });
