@@ -18,7 +18,7 @@ describe('Hello World API', () => {
     
     expect(response.statusCode).toBe(200);
     expect(response.headers['content-type']).toMatch(/application\/json/);
-    expect(response.body).toEqual({ message: 'Hello World' });
+    expect(response.body).toEqual({ message: 'Hello, World!' });
   });
 
   /**

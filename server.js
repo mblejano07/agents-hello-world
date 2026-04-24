@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 
 // API endpoint
 app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello World' });
+  res.json({ message: 'Hello, World!' });
 });
 
 // Error handling middleware (no stack trace leakage)
